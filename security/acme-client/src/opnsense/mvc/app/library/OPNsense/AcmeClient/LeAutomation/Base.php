@@ -81,6 +81,11 @@ abstract class Base extends \OPNsense\AcmeClient\LeCommon
         }
 
         LeUtils::log('running automation: ' . $this->config->name);
+
+        // TODO: introduce new "type" variable: defaults to "configd" automations,
+        // but can be set to "acme" so that acme.sh deployhooks can be used. We probably
+        // need to copy a lot code from LeValidation run().
+
         $backend = new \OPNsense\Core\Backend();
         $response = $backend->configdRun((string)$this->command, $this->command_args);
         return true;
