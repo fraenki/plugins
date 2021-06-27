@@ -854,6 +854,7 @@
                     <OptionValues>
                         <v1>Version 1</v1>
                         <v2>Version 2</v2>
+                        <v2ssl>Version 2 (with SSL information extension)</v2ssl>
                     </OptionValues>
                 </proxyProtocol>
                 <linkedServers type="ModelRelationField">
