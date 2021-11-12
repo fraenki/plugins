@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2021 Frank Wall
+ * Copyright (C) 2020-2021 Frank Wall
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,18 +29,23 @@
 namespace OPNsense\AcmeClient\LeAutomation;
 
 use OPNsense\AcmeClient\LeAutomationInterface;
+use OPNsense\AcmeClient\LeUtils;
 
 /**
- * Upload certificate to Synology DSM
+ * Run selected configd command
  * @package OPNsense\AcmeClient
  */
-class UploadSynology extends Base implements LeAutomationInterface
+class ConfigdGeneric extends Base implements LeAutomationInterface
 {
     public function prepare()
     {
-        // TODO set new "type" parameter to "acme", add required acme args
-        //$command = 'acmeclient upload_highwinds ' . $this->cert_id . ' ' . $this->config->id;
-        //$this->command = $command;
+        // Make sure a configd command was specified.
+        if (empty((string)$this->config->configd)) {
+            LeUtils::log_error('no configd command specified for automation: ' . $this->config->name);
+            return false;
+        }
+
+        $this->command = (string)$this->config->configd;
         return true;
     }
 }

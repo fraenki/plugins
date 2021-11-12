@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2020 Frank Wall
+ * Copyright (C) 2021 Frank Wall
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,23 +29,23 @@
 namespace OPNsense\AcmeClient\LeAutomation;
 
 use OPNsense\AcmeClient\LeAutomationInterface;
-use OPNsense\AcmeClient\LeUtils;
 
 /**
- * Run selected configd command
+ * Run acme.sh deploy hook synology_dsm
  * @package OPNsense\AcmeClient
  */
-class Configd extends Base implements LeAutomationInterface
+class AcmeSynologyDsm extends Base implements LeAutomationInterface
 {
     public function prepare()
     {
-        // Make sure a configd command was specified.
-        if (empty((string)$this->config->configd)) {
-            LeUtils::log_error('no configd command specified for automation: ' . $this->config->name);
-            return false;
-        }
-
-        $this->command = (string)$this->config->configd;
+        $this->acme_env['SYNO_Certificate'] = 'created by OPNsense ACME plugin';
+        $this->acme_env['SYNO_Hostname'] = (string)$this->config->acme_synology_dsm_hostname;
+        $this->acme_env['SYNO_Port'] = (string)$this->config->acme_synology_dsm_port;
+        $this->acme_env['SYNO_Scheme'] = (string)$this->config->acme_synology_dsm_scheme;
+        $this->acme_env['SYNO_Username'] = (string)$this->config->acme_synology_dsm_username;
+        $this->acme_env['SYNO_Password'] = (string)$this->config->acme_synology_dsm_password;
+        $this->acme_env['SYNO_Create'] = (string)$this->config->acme_synology_dsm_create;
+        $this->acme_args[] = '--deploy-hook synology_dsm';
         return true;
     }
 }
