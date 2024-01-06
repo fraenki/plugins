@@ -8,6 +8,17 @@ WWW: https://github.com/acmesh-official/acme.sh
 Plugin Changelog
 ================
 
+4.0
+This is a new major release with backwards-incompatible changes.
+Downgrade to older releases is not supported. Be sure to create a
+full backup and include /var/etc/acme-client.
+
+Changed:
+* use a dedicated acme.sh runtime directory for every cert (#3127)
+
+Fixed:
+* fix errors when the same Common Name is used multiple times (#3127)
+
 3.20
 
 Added:

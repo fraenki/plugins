@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ACME_BASE="/var/etc/acme-client"
-ACME_DIRS="/var/etc/acme-client/certs /var/etc/acme-client/keys /var/etc/acme-client/configs /var/etc/acme-client/challenges /var/etc/acme-client/home"
+ACME_DIRS="/var/etc/acme-client/certs /var/etc/acme-client/keys /var/etc/acme-client/configs /var/etc/acme-client/challenges /var/etc/acme-client/home /var/etc/acme-client/cert-home"
 
 # Generate required directories and set owner/mode recursively.
 for directory in ${ACME_DIRS}; do
