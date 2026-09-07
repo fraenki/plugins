@@ -35,7 +35,7 @@ use OPNsense\Core\Config;
  * FreeMyIp DNS API
  * @package OPNsense\AcmeClient
  */
-class DnsFreeMyIp extends Base implements LeValidationInterface
+class DnsFreemyip extends Base implements LeValidationInterface
 {
     public function prepare()
     {
