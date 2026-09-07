@@ -16,6 +16,7 @@ Added:
 
 Fixed:
 * fix incomplete permissions for non-root users (#5458)
+* fix using incorrect truenas_ws config keys (#5498)
 
 4.16
 
