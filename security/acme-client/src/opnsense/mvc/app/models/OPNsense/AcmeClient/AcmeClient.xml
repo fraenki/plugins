@@ -469,9 +469,9 @@
                         <dns_fornex>Fornex</dns_fornex>
                         <dns_freedns>FreeDNS</dns_freedns>
                         <dns_gandi_livedns>Gandi LiveDNS</dns_gandi_livedns>
+                        <dns_gcore>GCore Managed DNS</dns_gcore>
                         <dns_gd>GoDaddy.com</dns_gd>
                         <dns_gcloud>Google Cloud DNS</dns_gcloud>
-                        <dns_gcore>GCore Managed DNS</dns_gcore>
                         <dns_googledomains>Google Domains</dns_googledomains>
                         <dns_gdnsdk>GratisDNS.dk</dns_gdnsdk>
                         <dns_hetzner>Hetzner</dns_hetzner>

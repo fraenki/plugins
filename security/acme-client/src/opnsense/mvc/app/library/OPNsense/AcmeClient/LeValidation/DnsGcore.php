@@ -35,7 +35,7 @@ use OPNsense\Core\Config;
  * GCore Managed DNS API
  * @package OPNsense\AcmeClient
  */
-class DnsGCore extends Base implements LeValidationInterface
+class DnsGcore extends Base implements LeValidationInterface
 {
     public function prepare()
     {
