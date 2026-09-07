@@ -8,6 +8,15 @@ WWW: https://github.com/acmesh-official/acme.sh
 Plugin Changelog
 ================
 
+4.17
+
+Added:
+* add support for GCore DNS API (#5544)
+* add support for FreeMyIP DNS API (#5682)
+
+Fixed:
+* fix incomplete permissions for non-root users (#5458)
+
 4.16
 
 Added:
